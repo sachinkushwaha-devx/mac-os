@@ -6,20 +6,25 @@
   left: 50%;
   transform: translate(-50%);
   background-color: rgba(63, 60, 60, 0.381);
-  padding-inline: 1rem;
+  padding-inline: 0.75rem;
   padding-block: 0.75rem;
-  border-radius: 0.75rem;
-  backdrop-filter: blur(5px);
+  border-radius: 0.55rem;
+  backdrop-filter: blur(3px);
+  // overflow: hidden;
+  box-sizing: border-box;
 
   .icon {
+    position: relative;
     padding: 0.65rem;
     border-radius: 0.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
     aspect-ratio: 1/1;
-    width: 3.75rem;
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) ;
+    width: 3.65rem;
+    transition:  transform 0.5s cubic-bezier(0.25, 1, 0.25, 1);
+    transform-origin: center bottom;
+    z-index: 1;
   }
 
   .github,
@@ -61,10 +66,12 @@
     );
   }
   .icon:hover {
-    transform: scale(1.25) translateY(-20%);
+    transform: scale(1.08) translateY(-20px);
+    z-index: 2;
   }
+
   .icon:hover + .icon,
   .icon:has(+ .icon:hover) {
-    transform: scale(1.1) translateY(-10%);
+    transform: scale(1.03) translateY(-10px);
   }
 }
