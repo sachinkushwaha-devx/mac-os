@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "highlighter": "^0.1.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "react-markdown": "^10.1.0",
     "react-rnd": "^10.5.3",
+    "react-syntax-highlighter": "^16.1.1",
     "sass": "^1.104.1"
   },
   "devDependencies": {

@@ -3,6 +3,8 @@ import Doc from './components/Doc'
 import Nav from './components/Nav'
 import "./app.scss"
 import Github from './components/windows/Github'
+import Note from './components/windows/Note'
+import Resume from './components/windows/Resume'
 
 
 
@@ -12,6 +14,8 @@ const App = () => {
     <Nav />
    <Doc />
     <Github />
+    <Note />
+    <Resume />
    </main>
   )
 }
