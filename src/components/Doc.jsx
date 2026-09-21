@@ -1,10 +1,12 @@
 import React from 'react'
 import "./dock.scss"
 
-const Doc = () => {
+const Doc = ({windowsState, setWindowsState}) => {
   return (
     <footer className='dock'>
-        <div className="icon github"><img src="/doc-icons/github.svg" alt="" /></div>
+        <div
+        onclick={() => {setWindowsState(state=>({...state, github: true }))}}
+        className="icon github"><img src="/doc-icons/github.svg" alt="" /></div>
         <div className="icon note"><img src="/doc-icons/note.svg" alt="" /></div>
         <div className="icon pdf"><img src="/doc-icons/pdf.svg" alt="" /></div>
         <div className="icon calender"><img src="/doc-icons/calender.svg" alt="" /></div>

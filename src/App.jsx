@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Doc from './components/Doc'
 import Nav from './components/Nav'
 import "./app.scss"
@@ -11,14 +11,21 @@ import Cli from './components/windows/Cli'
 
 
 const App = () => {
+  const [windowsState, setwindowsState] = useState({
+    github: false,
+    note: false,
+    resume: false,
+    spotify: false,
+    cli: false
+  })
   return (
    <main>
-    <Nav />
-   <Doc />
-    <Github />
-    <Note />
-    <Resume />
-    <Spotify />
+    < Nav />
+   <Doc windowsState={windowsState} setWindowsState={setwindowsState} />
+    { windowsState.github &&< Github />}
+    { windowsState.note && <Note /> }
+    { windowsState.resume && <Resume /> }
+    { windowsState.spotify && <Spotify /> }
     <Cli />
 
 
