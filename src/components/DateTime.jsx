@@ -12,20 +12,12 @@ const DateTime = () => {
   }, [])
 
   const formatDateTime = (date) => {
-    const weekday = date
-      .toLocaleDateString('en-US', { weekday: 'short' })
-      .charAt(0)
-      .toUpperCase() + date
-        .toLocaleDateString('en-US', { weekday: 'short' })
-        .slice(1)
-        .toLowerCase()
-    const month = date
-      .toLocaleDateString('en-US', { month: 'short' })
-      .toLowerCase()
+    const weekday = date.toLocaleDateString('en-US', { weekday: 'short' })
+    const month = date.toLocaleDateString('en-US', { month: 'short' })
     const day = date.getDate()
     const time = date.toLocaleTimeString('en-US', {
       hour: 'numeric',
-      minute: '2-digit',    
+      minute: '2-digit',
     })
 
     return `${weekday} ${month} ${day} ${time}`

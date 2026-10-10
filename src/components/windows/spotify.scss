@@ -1,9 +1,18 @@
-.spotify-window{
+.spotify-window {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+
+  iframe {
     width: 100%;
     height: 100%;
-    iframe{
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
+    border: none;
+    background: transparent;
+  }
+}
+
+@media (max-width: 720px) {
+  .spotify-window {
+    min-height: 20rem;
+  }
 }

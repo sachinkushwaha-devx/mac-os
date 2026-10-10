@@ -1,14 +1,24 @@
-.note-window{
-    padding: 1rem;
-    overflow: auto;
-    height: 100%;
-    padding-bottom: 10rem;
-    font-size: 1.1rem;
+.note-window {
+  height: 100%;
+  overflow: auto;
+  padding: 1rem 1.25rem 10rem;
+  font-size: 1.05rem;
+  background: rgba(17, 17, 17, 0.8);
 
+  pre {
+    background-color: transparent !important;
+    margin: 0;
+    white-space: pre-wrap;
+  }
 
-    pre{
-        background-color: transparent !important;
+  code {
+    font-size: 0.9rem;
+  }
+}
 
-    }
-
+@media (max-width: 720px) {
+  .note-window {
+    padding: 0.8rem 0.9rem 7rem;
+    font-size: 0.9rem;
+  }
 }

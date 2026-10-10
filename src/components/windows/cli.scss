@@ -1,11 +1,17 @@
 .cli-window {
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 2.5rem;
+  background: linear-gradient(180deg, #1b1b1b, #111111);
+
+  div[name='react-console-emulator'] {
     height: 100%;
-    overflow: auto;
-    padding-bottom: 3rem;
-    background-color: #222222;
-    
-    div[name="react-console-emulator"] {
-        height: 100%;
-        background-color: transparent !important;
-    }
+    background-color: transparent !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .cli-window {
+    font-size: 0.8rem;
+  }
 }

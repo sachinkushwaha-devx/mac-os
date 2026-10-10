@@ -1,113 +1,114 @@
-import MacWindow from "./MacWindow";
-import TerminalModule from "react-console-emulator";
-import "./cli.scss";
+import React from 'react'
+import MacWindow from './MacWindow'
+import TerminalModule from 'react-console-emulator'
+import './cli.scss'
 
-const Terminal = TerminalModule?.default ?? TerminalModule;
+const Terminal = TerminalModule?.default ?? TerminalModule
 
-const Cli = ({windowName, setWindowsState}) => {
+const Cli = ({ windowName, setWindowsState, closeWindow, activeWindow, setActiveWindow }) => {
   const commands = {
-   
     about: {
-      description: "Show a short bio.",
-      usage: "about",
+      description: 'Show a short bio.',
+      usage: 'about',
       fn: () =>
-        "Hi, I’m Sachin Kushwaha — a front-end developer building modern, responsive, and user-friendly web experiences.",
+        "Hi, I’m Sachin Kushwaha — a front-end developer focused on building polished, responsive digital experiences.",
     },
     skills: {
-      description: "Show skills and tools.",
-      usage: "skills",
+      description: 'Show skills and tools.',
+      usage: 'skills',
       fn: () =>
-        "Skills:\n" +
-        " Frontend- React, Vite, JavaScript, HTML5, CSS3, SCSS, Git, UI/UX, Responsive Design \n" +
-        " Backend- Node.js, Express, MongoDB \n" +
-        " Tools- VS Code, GitHub, Figma, Chrome DevTools, NPM, Postman \n" +
-        " Other- REST APIs, JSON, Webpack, Babel, Agile/Scrum, Testing (Jest, React Testing Library) \n" +
-        "Cloud- AWS, Firebase, Heroku, Netlify, Vercel\n"+       
-        " I am passionate about creating seamless user experiences and writing clean, maintainable code.",
-        
+        'Skills:\n' +
+        ' Frontend: React, Vite, JavaScript, HTML5, CSS3, SCSS, UI/UX\n' +
+        ' Backend: Node.js, Express, MongoDB\n' +
+        ' Tools: VS Code, GitHub, Figma, Chrome DevTools, Postman\n' +
+        ' Other: REST APIs, Git, Responsive Design, Accessibility',
     },
     projects: {
-      description: "Show featured projects.",
-      usage: "projects",
+      description: 'Show featured projects.',
+      usage: 'projects',
       fn: () =>
-        "Featured work:\n" +
-        "  - Portfolio website\n" +
-        "  - Dashboard UI\n" +
-        "  - Productivity tool\n" +
-        "  - Creative web experiments",
+        'Featured work:\n' +
+        '  - Portfolio dashboard\n' +
+        '  - Productive workflow tools\n' +
+        '  - Modern frontend experiments',
     },
     experience: {
-      description: "Show work experience summary.",
-      usage: "experience",
+      description: 'Show work experience summary.',
+      usage: 'experience',
       fn: () =>
-        "Experience:\n" +
-        "  - Front-end developer\n" +
-        "  - Building React-based interfaces\n" +
-        "  - Creating responsive and clean user experiences",
+        'Experience:\n' +
+        '  - Front-end developer\n' +
+        '  - Building React-driven interfaces\n' +
+        '  - Creating clean, scalable user experiences',
     },
     resume: {
-      description: "Show quick resume summary.",
-      usage: "resume",
+      description: 'Show quick resume summary.',
+      usage: 'resume',
       fn: () =>
-        "Resume:\n" +
-        "  Front-end Developer\n" +
-        "  Specializing in React and modern UI development",
+        'Resume:\n' +
+        '  Front-end Developer\n' +
+        '  Specializing in React and modern UI development',
     },
     contact: {
-      description: "Show contact details.",
-      usage: "contact",
+      description: 'Show contact details.',
+      usage: 'contact',
       fn: () =>
-        "Contact:\n" +
-        "  Email: hello@example.com\n" +
-        "  Phone: +91 98765 43210\n" +
-        "  Location: India",
+        'Contact:\n' +
+        '  Email: sachinkushwaha8606@gmail.com\n' +
+        '  Location: India',
     },
     socials: {
-      description: "Show social links.",
-      usage: "socials",
+      description: 'Show social links.',
+      usage: 'socials',
       fn: () =>
-        "Socials:\n" +
-        "  LinkedIn: linkedin.com/in/your-name\n" +
-        "  GitHub: github.com/your-username\n" +
-        "  Instagram: instagram.com/your-handle",
+        'Socials:\n' +
+        '  LinkedIn: linkedin.com\n' +
+        '  GitHub: github.com/sachinkushwaha-devx\n' +
+        '  E-mail: sachinkushwaha8606@gmail.com',
     },
     github: {
-      description: "Show GitHub profile link.",
-      usage: "github",
-      fn: () => "GitHub: https://github.com/your-username",
+      description: 'Show GitHub profile link.',
+      usage: 'github',
+      fn: () => 'GitHub: https://github.com/sachinkushwaha-devx',
     },
     echo: {
-      description: "Echo a passed string.",
-      usage: "echo <string>",
-      fn: (...args) => args.join(" "),
+      description: 'Echo a passed string.',
+      usage: 'echo <string>',
+      fn: (...args) => args.join(' '),
     },
-  };
+  }
 
   return (
-    <MacWindow windowName={windowName} setWindowsState={setWindowsState} >
+    <MacWindow
+      windowName={windowName}
+      setWindowsState={setWindowsState}
+      closeWindow={closeWindow}
+      activeWindow={activeWindow}
+      setActiveWindow={setActiveWindow}
+      title="sachinkushwaha - zsh"
+    >
       <div className="cli-window">
         <Terminal
           commands={commands}
           welcomeMessage={
             "Welcome to Sachin Kushwaha's portfolio terminal.\n\n" +
             "Type 'help' to see all available commands.\n\n" +
-            "Available commands:\n" +
-            "  help  -      Show all commands\n" +
-            "  about   -    Learn about me\n" +
-            "  skills  -    View my tech stack\n" +
-            "  projects  -  See featured work\n" +
-            "  experience - Work history\n" +
-            "  resume   -   Resume summary\n" +
-            "  contact  -   Contact details\n" +
-            "  socials  -   Social profiles\n" +
-            "  github   -   GitHub profile"
+            'Available commands:\n' +
+            '  help     - Show all commands\n' +
+            '  about    - Learn about me\n' +
+            '  skills   - View my tech stack\n' +
+            '  projects - See featured work\n' +
+            '  resume   - Resume summary\n' +
+            '  contact  - Contact details\n' +
+            '  socials  - Social profiles\n' +
+            '  github   - GitHub profile'
           }
-          promptLabel={"sachinkushwaha~$"}
-          promptLabelStyle={{ color: "green" }}
+          promptLabel={'sachinkushwaha~$'}
+          promptLabelStyle={{ color: '#7cf88d' }}
         />
       </div>
     </MacWindow>
-  );
-};
+  )
+}
 
-export default Cli;
+export default Cli
