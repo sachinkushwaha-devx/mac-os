@@ -51,15 +51,15 @@ const Nav = ({ openWindow, closeAllWindows, widgetOpen, setWidgetOpen }) => {
   ]
 
   const fileActions = [
-    { icon: '▧', label: 'Open Projects', action: () => openWindow('github') },
-    { icon: '▤', label: 'Open Notes', action: () => openWindow('note') },
-    { icon: '▣', label: 'Open Resume', action: () => openWindow('resume') },
-    { icon: '×', label: 'Close All Windows', action: closeAllWindows },
+    { label: 'Open Projects', action: () => openWindow('github') },
+    { label: 'Open Notes', action: () => openWindow('note') },
+    { label: 'Open Resume', action: () => openWindow('resume') },
+    { label: 'Close All Windows', action: closeAllWindows },
   ]
 
   const terminalActions = [
-    { icon: '>_', label: 'Open Terminal', action: () => openWindow('cli') },
-    { icon: '?', label: 'Terminal Help', action: () => openWindow('cli') },
+    { label: 'Open Terminal', action: () => openWindow('cli') },
+    { label: 'Terminal Help', action: () => openWindow('cli') },
   ]
 
   const runAction = (action) => {
@@ -101,7 +101,6 @@ const Nav = ({ openWindow, closeAllWindows, widgetOpen, setWidgetOpen }) => {
                   role="menuitem"
                   onClick={() => runAction(item.action)}
                 >
-                  <span className="menu-option-icon" aria-hidden="true">{item.icon}</span>
                   <span>{item.label}</span>
                 </button>
               ))}
@@ -134,7 +133,6 @@ const Nav = ({ openWindow, closeAllWindows, widgetOpen, setWidgetOpen }) => {
                   role="menuitem"
                   onClick={() => runAction(item.action)}
                 >
-                  <span className="menu-option-icon terminal-option-icon" aria-hidden="true">{item.icon}</span>
                   <span>{item.label}</span>
                 </button>
               ))}
@@ -146,7 +144,6 @@ const Nav = ({ openWindow, closeAllWindows, widgetOpen, setWidgetOpen }) => {
                 aria-disabled="true"
                 title="A browser app cannot start an operating-system administrator terminal."
               >
-                <span className="menu-option-icon" aria-hidden="true">⌑</span>
                 <span>Administrator mode</span>
                 <span className="disabled-note">Unavailable</span>
               </button>
